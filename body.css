@@ -1,0 +1,103 @@
+/* Base styles */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+    color: #333;
+    padding: 20px;
+}
+
+
+/* Container */
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+
+/* Name Heading */
+
+h1 {
+    font-size: 2.8rem;
+    color: #fff;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    margin-bottom: 40px;
+    border-bottom: 3px solid #ffffffaa;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+
+/* Card sections */
+
+.card {
+    background: #ffffff;
+    border: 2px solid #0077b6;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Section Headings */
+
+.card h2 {
+    font-size: 1.5rem;
+    color: #023e8a;
+    border-bottom: 2px solid #0077b6;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+
+/* Text Content */
+
+.card p,
+.card ul {
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+
+/* Skills List */
+
+.skills ul {
+    padding-left: 20px;
+    list-style-type: square;
+}
+
+.skills li {
+    margin-bottom: 8px;
+}
+
+
+/* Links */
+
+a {
+    color: #0077b6;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px dashed #0077b6;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #005f99;
+    border-bottom: 2px solid #005f99;
+}
+
+
+/* Responsive */
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+    .card {
+        padding: 20px;
+    }
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niranjana's Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Niranjana's profile</h1>
+
+        <!-- About Section -->
+        <div class="card about">
+            <h2>About Me</h2>
+            <p>
+                I’m a third-year B.Tech Computer Science (Data Science) student at St. Thomas Institute for Science and Technology. Passionate about transforming data into meaningful insights, I'm building a strong foundation in Python, SQL, machine learning, and data
+                analysis. I enjoy working on real-world projects that challenge me to think critically and creatively. Eager to collaborate, learn, and grow within the dynamic world of data science.
+            </p>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="card skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Leadership</li>
+                <li>Teamwork</li>
+                <li>Problem Solving</li>
+                <li>Python</li>
+                <li>SQL</li>
+
+            </ul>
+        </div>
+
+        <!-- Widgets Section -->
+        <div class="TIME AND LOCATION">
+            <h2>TIME AND LOCATION</h2>
+            <!-- Clock Widget -->
+            <div id="clock-widget" style="margin-bottom: 16px;">
+                <strong>Current Time:</strong> <span id="clock"></span>
+            </div>
+            <!-- Weather Widget (Open-Meteo demo) -->
+            <div id="weather-widget">
+                <strong>Weather (Thiruvananthapuram):</strong>
+                <span id="weather">Loading...</span>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="card contact">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:niranjana@gmail.com.com">niranjana@gmail.com</a></p>
+            <p>LinkedIn: <a href="www.linkedin.com/in/
+niranjana2005 " target="_blank">www.linkedin.com/in/niranjana2005
+</a></p>
+
+        </div>
+    </div>
+
+    <script>
+        // Clock Widget
+        function updateClock() {
+            const now = new Date();
+            document.getElementById('clock').textContent = now.toLocaleTimeString();
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // Weather Widget (using Open-Meteo API for demo)
+        fetch('https://api.open-meteo.com/v1/forecast?latitude=8.5241&longitude=76.9366&current_weather=true')
+            .then(response => response.json())
+            .then(data => {
+                if (data.current_weather) {
+                    document.getElementById('weather').textContent =
+                        `${data.current_weather.temperature}°C, ${data.current_weather.weathercode === 0 ? 'Clear' : 'Cloudy'}`;
+                } else {
+                    document.getElementById('weather').textContent = 'Unavailable';
+                }
+            })
+            .catch(() => {
+                document.getElementById('weather').textContent = 'Unavailable';
+            });
+    </script>
+
+</body>
+
+</html>
